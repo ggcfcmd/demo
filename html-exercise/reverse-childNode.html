@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reverse-childNode</title>
+</head>
+<body>
+    <div id="a">
+        <span>1</span>
+        <p>2</p>
+        <a>3</a>
+        <div>4</div>
+    </div>
+
+    <script>
+        // 乞丐版
+        // let element = document.getElementById('a');
+        // const arr = Array.from(element.childNodes);
+        // element.innerHTML = '';
+        // arr.reverse();
+        // arr.forEach(a => {
+        //     element.appendChild(a);
+        // })
+        // console.log(element.childNodes)
+
+        // node 操作
+        // let element = document.getElementById("a");
+
+        // function reverseChild(element) {
+        //     var l = element.childNodes.length;
+        //     while (l-- > 0) {
+        //         element.appendChild(element.childNodes[l]);
+        //     }
+        // }
+
+        // reverseChild(element);
+
+        // range
+        let el = document.getElementById('a');
+        const range = new Range();
+        range.selectNodeContents(el);
+        const fragment = range.extractContents();
+        let l = fragment.childNodes.length;
+        while (l-- > 0) {
+            fragment.appendChild(fragment.childNodes[l]);
+        }
+        el.appendChild(fragment);
+    </script>
+</body>
+</html>

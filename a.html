@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UFT-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realm合集</title>
+</head>
+
+<body>
+  <div id="realmList">
+
+  </div>
+  <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g6-3.5.10/dist/g6.min.js"></script>
+  <script>
+    const data = {
+      nodes: [{
+          id: 'String',
+          label: 'String',
+        },
+        {
+            id: 'Number',
+            label: 'Number',
+        }, {
+          id: 'Object',
+          label: 'Object',
+        }, {
+          id: 'Boolean',
+          label: 'Boolean'
+        }, {
+          id: 'Array',
+          label: 'Array',
+        }, {
+          id: 'Date',
+          label: 'Date',
+        }, {
+          id: 'RegExp',
+          label: 'RegExp'
+        }, {
+          id: 'Promise',
+          label: 'Promise'
+        }, {
+            id: 'Proxy',
+            label: 'Proxy'
+        }, {
+          id: 'Map',
+          label: 'Map'
+        }, {
+          id: 'WeakMap',
+          label: 'WeakMap'
+        }, {
+          id: 'Set',
+          label: 'Set'
+        }, {
+          id: 'WeakSet',
+          label: 'WeakSet'
+        }, {
+          id: 'Function',
+          label: 'Function'
+        }, {
+          id: 'Error',
+          label: 'Error'
+        }, {
+          id: 'EvalError',
+          label: 'EvalError'
+        }, {
+          id: 'RangeError',
+          label: 'RangeError'
+        }, {
+          id: 'ReferenceError',
+          label: 'ReferenceError'
+        }, {
+          id: 'SyntaxError',
+          label: 'SyntaxError'
+        }, {
+          id: 'TypeError',
+          label: 'TypeError'
+        }, {
+          id: 'URIError',
+          label: 'URIError'
+        }, {
+          id: 'ArrayBuffer',
+          label: 'ArrayBuffer'
+        }, {
+          id: 'SharedArrayBuffer',
+          label: 'SharedArrayBuffer'
+        }, {
+          id: 'DataView',
+          label: 'DataView'
+        }, {
+          id: 'Float32Array',
+          label: 'Float32Array'
+        }, {
+          id: 'Float64Array',
+          label: 'Float64Array'
+        }, {
+          id: 'Int8Array',
+          label: 'Int8Array'
+        }, {
+          id: 'Int16Array',
+          label: 'Int16Array'
+        }, {
+          id: 'Int32Array',
+          label: 'Int32Array'
+        }, {
+          id: 'Uint8Array',
+          label: 'Uint8Array'
+        }, {
+          id: 'Uint16Array',
+          label: 'Uint16Array'
+        }, {
+          id: 'Uint32Array',
+          label: 'Uint32Array'
+        }, {
+          id: 'Unit8ClampedArray',
+          label: 'Unit8ClampedArray'
+        }, {
+          id: 'eval',
+          label: 'eval'
+        }, {
+          id: 'isFinite',
+          label: 'isFinite'
+        }, {
+          id: 'isNaN',
+          label: 'isNaN'
+        }, {
+          id: 'parseInt',
+          label: 'parseInt'
+        }, {
+          id: 'parseFloat',
+          label: 'parseFloat'
+        }, {
+          id: 'decodeURI',
+          label: 'decodeURI'
+        }, {
+          id: 'decodeURIComponent',
+          label: 'decodeURIComponent'
+        }, {
+          id: 'encodeURI',
+          label: 'encodeURI'
+        }, {
+          id: 'encodeURIComponent',
+          label: 'encodeURIComponent'
+        }, {
+          id: 'Atomics',
+          label: 'Atomics'
+        }, {
+          id: 'JSON',
+          label: 'JSON'
+        }, {
+          id: 'Math',
+          label: 'Math'
+        }, {
+          id: 'Reflect',
+          label: 'Reflect'
+        }
+      ]
+    }
+
+    const graph = new G6.Graph({
+      container: 'realmList',
+      width: 2000,
+      height: 1500,
+      modes: {
+        default: [
+          'drag-canvas',
+          'zoom-canvas'
+        ],
+        edit: [
+            'click-select'
+        ]
+      }
+    })
+    graph.data(data)
+    graph.render()
+
+  </script>
+</body>
+
+</html>

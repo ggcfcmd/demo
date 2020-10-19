@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box hover change</title>
+</head>
+<style>
+    @keyframes resize {
+        from { padding: 0; background-color: aquamarine }
+        25% { padding: 0 20px; background-color: aqua }
+        50% { padding: 0 100px; background-color: aquamarine }
+        75% { padding: 0 20px; background-color: aqua }
+        to { padding: 0; background-color: aquamarine }
+    }
+    .parent {
+        width: 1000px;
+        height: 400px;
+        background-color: antiquewhite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box {
+        width: 200px;
+        height: 100px;
+        background-color: aquamarine
+    }
+    .box:hover {
+        animation: resize ease-in-out 5s 1;
+    }
+</style>
+<body>
+    <div class="parent">
+        <div class="box">
+
+        </div>
+    </div>
+</body>
+</html>

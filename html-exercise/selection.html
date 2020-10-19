@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="text">范围由与范围的起点和终点相对应的两个边界点组成。边界点在Document或DocumentFragment树中的位置可以用节点和偏移量来表征。该节点称为边界点及其位置的容器。容器及其祖先是边界点及其位置的祖先容器。节点内的偏移量称为边界点及其位置的偏移量。如果容器是Attr，Document，DocumentFragment，Element或EntityReference节点，则偏移量位于其子节点之间。如果容器是CharacterData，Comment或ProcessingInstruction节点，则偏移量在容器包含的UTF-16编码字符串的16位单元之间。</p>
+    </div>
+
+    <script>
+        const el = document.getElementById('text');
+        el.addEventListener('mouseup', () => {
+            // const sel = window.getSelection();
+            const sel = document.getSelection().getRangeAt(0);
+            console.log(sel);
+        })
+    </script>
+</body>
+</html>

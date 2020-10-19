@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <div id="a" style="width: 100%; height: 300px; background-color: pink">
+        <div id="b" style="width: 100%; height: 200px; background-color: lightblue">
+        </div>
+    </div>
+    <script>
+        var a = document.getElementById("a");
+        var b = document.getElementById("b");
+        a.addEventListener("click", function() { console.log('a') })
+        b.addEventListener("click", function() { console.log('b1') } , true)
+        b.addEventListener("click", function(e) {
+            console.log('b');
+        })
+        a.addEventListener("click", function() { console.log('a1') } ,true)
+        a.addEventListener("click", function() { console.log('a2') } , { capture: true })
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Variables test</title>
+</head>
+<style type="text/css">
+    * {
+        color: green
+    }
+
+    #parent {
+        width: clamp(100px, 200px, 300px);
+        height: 100px;
+        /* color: yellow; */
+        --color: red;
+    }
+
+    .child,
+    .children {
+        width: 50px;
+        height: 50px;
+        /* color: toggle('blue', 'gray'); */
+        /* color: blue; */
+        background-color: var(--color)
+    }
+</style>
+
+<body>
+    <div id="parent">
+        哈哈哈
+        <div class="children">
+            啊啊啊啊
+        </div>
+        <div class="child">
+            啊啊啊啊
+        </div>
+        <div class="child">
+            啊啊啊啊
+        </div>
+        <div class="child">
+            啊啊啊啊
+        </div>
+        <div class="child">
+            啊啊啊啊
+        </div>
+    </div>
+    <script>
+        const style = document.documentElement.querySelector("style:not([type])")
+        console.log(style)
+    </script>
+</body>
+
+</html>

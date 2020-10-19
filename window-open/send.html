@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send</title>
+</head>
+<body>
+    <span id="call"></span>
+    <button id="send">发送</button>
+
+    <script>
+        document.getElementById('send').addEventListener('click', () => {
+            const opener = window.open('http://assist.tinetcloud.com:80')
+            // const opener = window.open('./receive.html')
+            setTimeout(() => {
+                    opener.postMessage(JSON.stringify({type: 'start', data: {a: 111, b: 222}}), 'http://assist.tinetcloud.com:80')
+                    // opener.postMessage('aaaaa', '*')
+            }, 5000)
+        })
+
+        window.addEventListener('message', (event) => {
+            document.getElementById('call').innerHTML = event.data
+        })
+    </script>
+</body>
+</html>

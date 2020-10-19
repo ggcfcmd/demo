@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function foo(something, other) {
+            console.log(something, other);
+            return this.a + something + other;
+        }
+
+        function bind(fn, obj) {
+            return function () {
+                return fn.apply(obj, arguments);
+            }
+        }
+        var obj = {
+            a: 2
+        }
+        var bar = bind(foo, obj);
+        var b = bar(1, 3)
+        console.log(b)
+    </script>
+</body>
+
+</html>

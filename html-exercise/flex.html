@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+</head>
+<style>
+    @keyframes color {
+        from { background-color: yellow; }
+        50% { background-color: aquamarine; }
+        to { background-color: aqua; }
+    }
+    .parent {
+        width: 1000px;
+        height: 200px;
+        display: flex;
+        flex-flow: row wrap;
+        /* flex-direction: row;
+        flex-wrap: wrap-reverse; */
+        justify-content: space-evenly;
+        border: 1px solid aqua;
+    }
+    .child {
+        height: 100px;
+        margin: 10px;
+        /* background-color: aquamarine; */
+        animation: color 2s ease-in-out 1 alternate forwards; 
+        flex: 1;
+        max-width: 100px;
+        /* min-width: 200px; */
+    }
+</style>
+<body>
+    <div class="parent">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parent</title>
+</head>
+
+<body>
+    <div style="width: 200px; height: 200px;">
+        <button id="btn" type="submit">走你</button>
+    </div>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', () => {
+            const url = 'http://assist-agent-test.tinetcloud.com/assist/redirect?enterpriseId=7000280&sign=6bdea0a37c746bd67fb464361cb9327e&timestamp=1600932220&username=admin';
+            const openPage = window.open(url, 'helper');
+            setTimeout(() => {
+                openPage.postMessage({type: 'start'}, url)
+            }, 5000)
+        })
+        // element.addEventListener('load', () => {
+        //     let index = 0;
+        //     setInterval(() => {
+        //         element.contentWindow.postMessage(`这是第${index}次请求`, 'http://127.0.0.1:9000');
+        //         index++;
+        //     }, 2000)
+        // })                
+    </script>
+</body>
+
+</html>

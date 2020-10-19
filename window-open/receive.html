@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>receive</title>
+</head>
+<body>
+    <p><span id="receive"></span></p>
+    <script>
+        window.addEventListener('message', (event) => {
+            console.log(event);
+            document.getElementById('receive').innerHTML = event.data
+            event.source.postMessage('消息回执', event.origin)
+        })
+    </script>
+</body>
+</html>
